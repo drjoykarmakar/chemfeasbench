@@ -1,0 +1,173 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "provider": {
+      "const": "ollama",
+      "default": "ollama",
+      "title": "Provider",
+      "type": "string"
+    },
+    "model": {
+      "default": "qwen2.5:0.5b",
+      "title": "Model",
+      "type": "string"
+    },
+    "model_digest": {
+      "pattern": "^[a-f0-9]{64}$",
+      "title": "Model Digest",
+      "type": "string"
+    },
+    "condition": {
+      "default": "model_only",
+      "enum": [
+        "model_only",
+        "structured_audit",
+        "tool_assisted",
+        "evidence_assisted"
+      ],
+      "title": "Condition",
+      "type": "string"
+    },
+    "split": {
+      "default": "development",
+      "enum": [
+        "development",
+        "test"
+      ],
+      "title": "Split",
+      "type": "string"
+    },
+    "development_only": {
+      "default": true,
+      "title": "Development Only",
+      "type": "boolean"
+    },
+    "prompt_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Prompt Version",
+      "type": "string"
+    },
+    "seed": {
+      "default": 20261116,
+      "title": "Seed",
+      "type": "integer"
+    },
+    "temperature": {
+      "default": 0,
+      "maximum": 2,
+      "minimum": 0,
+      "title": "Temperature",
+      "type": "number"
+    },
+    "max_output_tokens": {
+      "default": 768,
+      "maximum": 8192,
+      "minimum": 64,
+      "title": "Max Output Tokens",
+      "type": "integer"
+    },
+    "context_window": {
+      "default": 8192,
+      "maximum": 32768,
+      "minimum": 4096,
+      "title": "Context Window",
+      "type": "integer"
+    },
+    "cpu_threads": {
+      "default": 2,
+      "maximum": 32,
+      "minimum": 1,
+      "title": "Cpu Threads",
+      "type": "integer"
+    },
+    "timeout_seconds": {
+      "default": 180,
+      "exclusiveMinimum": 0,
+      "maximum": 600,
+      "title": "Timeout Seconds",
+      "type": "number"
+    },
+    "transport_retries": {
+      "default": 1,
+      "maximum": 3,
+      "minimum": 0,
+      "title": "Transport Retries",
+      "type": "integer"
+    },
+    "samples": {
+      "default": 1,
+      "maximum": 9,
+      "minimum": 1,
+      "title": "Samples",
+      "type": "integer"
+    },
+    "aggregation": {
+      "const": "strict_majority_first_matching_response",
+      "default": "strict_majority_first_matching_response",
+      "title": "Aggregation",
+      "type": "string"
+    },
+    "max_cases": {
+      "anyOf": [
+        {
+          "minimum": 1,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Max Cases"
+    },
+    "oracle_diagnosis": {
+      "default": false,
+      "title": "Oracle Diagnosis",
+      "type": "boolean"
+    },
+    "evidence_corpus": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Evidence Corpus"
+    },
+    "evidence_digest": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Evidence Digest"
+    },
+    "retrieval_top_k": {
+      "default": 2,
+      "maximum": 5,
+      "minimum": 1,
+      "title": "Retrieval Top K",
+      "type": "integer"
+    },
+    "retrieval_character_budget": {
+      "default": 2000,
+      "maximum": 8000,
+      "minimum": 100,
+      "title": "Retrieval Character Budget",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "model_digest"
+  ],
+  "title": "RunConfig",
+  "type": "object"
+}

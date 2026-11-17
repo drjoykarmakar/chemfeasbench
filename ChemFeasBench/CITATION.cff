@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+title: 'ChemFeasBench: Evaluating Chemical Feasibility and Experimental Validity in Language Models'
+message: 'Please cite this software when using the evaluation or curation pipeline. This release contains unreviewed draft candidates, not validated ground truth.'
+type: software
+version: 0.1.0
+authors:
+  - family-names: Karmakar
+    given-names: Joy
+license: MIT
+abstract: 'A research software system for chemical experimental validity classification, independent human annotation, controlled protocol variants and reproducible clustered evaluation. No DOI or publication is claimed.'
+keywords:
+  - chemistry
+  - fluorescence
+  - assay validity
+  - language model evaluation
+  - benchmark curation

@@ -1,0 +1,17 @@
+{
+  "version": "proposed-1.0",
+  "registration_status": "proposed_not_registered",
+  "primary_rq": ["RQ1", "RQ3"],
+  "secondary_rq": ["RQ2", "RQ6", "RQ7"],
+  "exploratory_rq": ["RQ4", "RQ5"],
+  "primary_outcomes": ["macro_f1", "major_failure_recall", "false_acceptance_rate", "confusion_matrix"],
+  "primary_comparison": "structured_audit minus model_only on identical frozen test cases for each model selected before test evaluation",
+  "bootstrap": {"unit": "connected_family_source_component", "resamples": 2000, "seed": 20261116},
+  "invalid_outputs": "no_classification_credit",
+  "missing_major": "all predictions other than major_validity_failure, including output failures",
+  "diagnosis": "exact acceptable issue set plus span proxy; explanation correctness requires human assessment",
+  "explanation_subset": "all pilot major-failure cases; blinded shuffled explanation packets; freeze subset before reading outputs",
+  "split": {"development_families": 6, "test_families": 9},
+  "confirmatory_p_values": false,
+  "multiplicity": "unadjusted descriptive intervals; future confirmatory family and correction must be frozen before evaluation"
+}

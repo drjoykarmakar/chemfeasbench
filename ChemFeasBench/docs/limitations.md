@@ -1,0 +1,14 @@
+# Limitations and remaining dependencies
+
+- All 60 cases are AI-assisted original hypothetical drafts. Proposed labels, scientific edits and issue rationales have no independent expert validation. No laboratory measurements or model performance on gold ground truth exist at this milestone.
+- Minor/valid boundaries and the sufficiency of positive controls are objective-dependent. Replication and approximate-dose cases need particular scrutiny. Four-way balance is a construction goal, not a reason to retain ambiguous labels.
+- Only two domains and 15 independent authored templates are represented. Public development cases are contamination-exposed. The 36 private candidates have unknown prior conceptual contamination; keeping them private does not establish novelty or absence from training data.
+- The held-out set must stay outside public repositories, model-accessible files and evidence indexes. This implementation isolates provider payloads, not an arbitrary agent with filesystem access.
+- The local review app has distinct role tokens and revision-bound records. An operator must verify actual reviewer identities, qualifications, conflicts and independence. Filesystem access bypasses interface protections; audit chains are not signed external attestations. The app is loopback-only, not a multiuser internet service.
+- Current agreement and human-explanation metrics remain empty until actual records exist. Structural issue and quote metrics are proxies, never the sole authority for scientific explanation correctness.
+- Checkers cover only explicitly represented facts and supplied criteria. They cannot establish biological activity, reaction feasibility, mechanism, safety or experimental success. Transcription mistakes remain possible.
+- Evidence retrieval is deterministic lexical matching over a small pinned guidance corpus. Corpus-schema and marker checks do not establish semantic independence or correct claim support. Source rights must be rechecked before adding full texts or figures.
+- Only the local Ollama adapter is implemented and tested. The small cached model smoke run tests the pipeline and output contract; it is not a representative model comparison. Commercial adapters, model judging and syntax repair are not implemented.
+- Meaning-preserving style pairs are not yet authored and reviewed. RQ4 scoring is available, but there is no presentation-effect experiment in this pilot. Broader chemistry domains are schema-supported, not validated pilot coverage.
+- Confidence intervals from very few clusters are unstable and cannot cover all annotation, contamination, model or scientific-generalization uncertainty. The proposed plan is not a preregistration.
+- The optional ChemAgent Index output is a compatible intake record. The existing ranking engine does not automatically ingest these metrics.

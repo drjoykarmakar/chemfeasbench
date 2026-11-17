@@ -1,0 +1,331 @@
+{
+  "scientific_status": "DRAFT DATA — UNREVIEWED PROPOSED LABELS",
+  "run_id": "cd2953eab76d469e1385dbd536496601f4141b2f6aad87b90e00f8b3e338a948",
+  "model": {
+    "provider": "ollama",
+    "model": "qwen2.5:0.5b",
+    "digest": "a8b0c51577010a279d933d14c2a8ab4b268079d44c5c8830c0a93900f1827c67",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen2",
+      "families": [
+        "qwen2"
+      ],
+      "parameter_size": "494.03M",
+      "quantization_level": "Q4_K_M",
+      "context_length": 32768,
+      "embedding_length": 896,
+      "runner": "ggml"
+    },
+    "runtime_version": "0.40.16",
+    "cost_usd": null,
+    "cost_note": "Local compute and energy costs not measured."
+  },
+  "condition": "model_only",
+  "metrics": {
+    "n": 8,
+    "clusters": 2,
+    "macro_f1": 0.0,
+    "accuracy": {
+      "value": 0.0,
+      "numerator": 0,
+      "denominator": 8
+    },
+    "major_failure_recall": {
+      "value": 0.0,
+      "numerator": 0,
+      "denominator": 2
+    },
+    "false_acceptance_rate": {
+      "value": 0.0,
+      "numerator": 0,
+      "denominator": 2
+    },
+    "missed_major_failure_rate": {
+      "value": 1.0,
+      "numerator": 2,
+      "denominator": 2
+    },
+    "over_rejection_rate": {
+      "value": 0.0,
+      "numerator": 0,
+      "denominator": 2
+    },
+    "valid_unsuccessful_rate": {
+      "value": 1.0,
+      "numerator": 2,
+      "denominator": 2
+    },
+    "format_failure_rate": {
+      "value": 1.0,
+      "numerator": 8,
+      "denominator": 8
+    },
+    "provider_error_rate": {
+      "value": 0.0,
+      "numerator": 0,
+      "denominator": 8
+    },
+    "abstention_rate": {
+      "value": 0.0,
+      "numerator": 0,
+      "denominator": 8
+    },
+    "missing_rate": {
+      "value": 0.0,
+      "numerator": 0,
+      "denominator": 8
+    },
+    "per_class": {
+      "valid": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 2,
+        "predicted_count": 0
+      },
+      "minor_issue": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 2,
+        "predicted_count": 0
+      },
+      "major_validity_failure": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 2,
+        "predicted_count": 0
+      },
+      "insufficient_information": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 2,
+        "predicted_count": 0
+      }
+    },
+    "confusion_matrix": {
+      "valid": {
+        "valid": 0,
+        "minor_issue": 0,
+        "major_validity_failure": 0,
+        "insufficient_information": 0,
+        "format_failure": 2,
+        "provider_error": 0,
+        "abstention": 0,
+        "missing": 0
+      },
+      "minor_issue": {
+        "valid": 0,
+        "minor_issue": 0,
+        "major_validity_failure": 0,
+        "insufficient_information": 0,
+        "format_failure": 2,
+        "provider_error": 0,
+        "abstention": 0,
+        "missing": 0
+      },
+      "major_validity_failure": {
+        "valid": 0,
+        "minor_issue": 0,
+        "major_validity_failure": 0,
+        "insufficient_information": 0,
+        "format_failure": 2,
+        "provider_error": 0,
+        "abstention": 0,
+        "missing": 0
+      },
+      "insufficient_information": {
+        "valid": 0,
+        "minor_issue": 0,
+        "major_validity_failure": 0,
+        "insufficient_information": 0,
+        "format_failure": 2,
+        "provider_error": 0,
+        "abstention": 0,
+        "missing": 0
+      }
+    },
+    "prediction_columns": [
+      "valid",
+      "minor_issue",
+      "major_validity_failure",
+      "insufficient_information",
+      "format_failure",
+      "provider_error",
+      "abstention",
+      "missing"
+    ],
+    "brier_parsed_only": {
+      "value": null,
+      "denominator": 0
+    },
+    "brier_failure_penalty": {
+      "value": 2.0,
+      "denominator": 8,
+      "failure_penalty": 2
+    },
+    "calibration": {
+      "ece_5_equal_width_bins": null,
+      "bins": [
+        {
+          "lower": 0.0,
+          "upper": 0.2,
+          "n": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.2,
+          "upper": 0.4,
+          "n": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.4,
+          "upper": 0.6,
+          "n": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.6,
+          "upper": 0.8,
+          "n": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.8,
+          "upper": 1.0,
+          "n": 0,
+          "mean_confidence": null,
+          "accuracy": null
+        }
+      ],
+      "denominator": 0,
+      "note": "Parsed outputs only; small-bin estimates are descriptive and unstable."
+    }
+  },
+  "primary_intervals": {
+    "macro_f1": {
+      "estimate": 0.0,
+      "n": 8,
+      "clusters": 2,
+      "seed": 20261116,
+      "resamples": 2000,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "valid_resamples": 2000,
+      "method": "connected-family cluster percentile bootstrap"
+    },
+    "major_failure_recall": {
+      "estimate": 0.0,
+      "n": 8,
+      "clusters": 2,
+      "seed": 20261116,
+      "resamples": 2000,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "valid_resamples": 2000,
+      "method": "connected-family cluster percentile bootstrap"
+    },
+    "false_acceptance_rate": {
+      "estimate": 0.0,
+      "n": 8,
+      "clusters": 2,
+      "seed": 20261116,
+      "resamples": 2000,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "valid_resamples": 2000,
+      "method": "connected-family cluster percentile bootstrap"
+    },
+    "missed_major_failure_rate": {
+      "estimate": 1.0,
+      "n": 8,
+      "clusters": 2,
+      "seed": 20261116,
+      "resamples": 2000,
+      "ci95": [
+        1.0,
+        1.0
+      ],
+      "valid_resamples": 2000,
+      "method": "connected-family cluster percentile bootstrap"
+    }
+  },
+  "matched": {
+    "matched_transition_accuracy": {
+      "value": 0.0,
+      "numerator": 0,
+      "denominator": 6
+    },
+    "valid_major_pairwise_success": {
+      "value": 0.0,
+      "numerator": 0,
+      "denominator": 2
+    },
+    "presentation_flip_rate": {
+      "value": null,
+      "numerator": 0,
+      "denominator": 0
+    },
+    "presentation_note": "Requires reviewed meaning-preserving pairs and two parsed predictions; no presentation pairs in the initial pilot."
+  },
+  "diagnosis": {
+    "oracle_structural_success": {
+      "value": 0.0,
+      "numerator": 0,
+      "denominator": 2
+    },
+    "end_to_end_structural_success": {
+      "value": 0.0,
+      "numerator": 0,
+      "denominator": 2
+    },
+    "oracle_coverage": {
+      "value": 1.0,
+      "numerator": 2,
+      "denominator": 2
+    },
+    "oracle_human_explanation_accuracy": {
+      "value": null,
+      "numerator": 0,
+      "denominator": 0
+    },
+    "end_to_end_human_explanation_accuracy_subset": {
+      "value": null,
+      "numerator": 0,
+      "denominator": 0
+    },
+    "note": "Code/span success is a structural proxy, not verified explanation correctness. Human fields stay empty until actual blind assessment."
+  },
+  "usage": {
+    "input_tokens": 10568,
+    "output_tokens": 5074,
+    "known_cost_usd": null,
+    "elapsed_seconds": 265.35287774800236,
+    "requests": 10,
+    "transport_attempts": 10
+  },
+  "component_output_counts": {
+    "format_failure": 8
+  },
+  "limitations": [
+    "Unreviewed proposed labels cannot establish scientific model performance.",
+    "Small clustered pilot; no definitive ranking.",
+    "Bootstrap sampling uncertainty excludes contamination, label uncertainty and model nondeterminism.",
+    "Null cost means unknown, not zero. Token totals include only provider-reported usage."
+  ]
+}

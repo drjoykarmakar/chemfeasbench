@@ -1,0 +1,9 @@
+{
+  "policy_version":"1.0",
+  "allow_aggregate_metrics":true,
+  "allow_draft_results":true,
+  "allow_raw_responses":false,
+  "allow_private_cases":false,
+  "allow_reviewer_identifiers":false,
+  "rationale":"Release aggregate software-smoke observations with an explicit unreviewed label notice; exclude private content and identities."
+}

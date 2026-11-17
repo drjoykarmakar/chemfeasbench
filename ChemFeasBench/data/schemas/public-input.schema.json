@@ -1,0 +1,123 @@
+{
+  "$defs": {
+    "CheckSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "enum": [
+            "dimension",
+            "dilution",
+            "balance",
+            "spectral_overlap",
+            "calibration_range",
+            "threshold",
+            "required_evidence"
+          ],
+          "title": "Name",
+          "type": "string"
+        },
+        "applicable": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Applicable"
+        },
+        "inputs": {
+          "additionalProperties": true,
+          "title": "Inputs",
+          "type": "object"
+        },
+        "source_quotes": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Source Quotes",
+          "type": "array"
+        },
+        "assumptions": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Assumptions",
+          "type": "array"
+        }
+      },
+      "required": [
+        "name",
+        "applicable",
+        "inputs",
+        "source_quotes",
+        "assumptions"
+      ],
+      "title": "CheckSpec",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "protocol_text": {
+      "maxLength": 30000,
+      "minLength": 40,
+      "title": "Protocol Text",
+      "type": "string"
+    },
+    "stated_objective": {
+      "maxLength": 2000,
+      "minLength": 10,
+      "title": "Stated Objective",
+      "type": "string"
+    },
+    "supplied_measurements": {
+      "additionalProperties": true,
+      "title": "Supplied Measurements",
+      "type": "object"
+    },
+    "instrument_or_assay_context": {
+      "maxLength": 5000,
+      "title": "Instrument Or Assay Context",
+      "type": "string"
+    },
+    "explicit_assumptions": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 30,
+      "title": "Explicit Assumptions",
+      "type": "array"
+    },
+    "evidence_packet_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Evidence Packet Id"
+    },
+    "structured_checks": {
+      "items": {
+        "$ref": "#/$defs/CheckSpec"
+      },
+      "maxItems": 30,
+      "title": "Structured Checks",
+      "type": "array"
+    }
+  },
+  "required": [
+    "protocol_text",
+    "stated_objective",
+    "supplied_measurements",
+    "instrument_or_assay_context",
+    "explicit_assumptions"
+  ],
+  "title": "PublicInput",
+  "type": "object"
+}

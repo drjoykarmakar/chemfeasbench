@@ -1,0 +1,751 @@
+{
+  "$defs": {
+    "Adjudication": {
+      "additionalProperties": false,
+      "properties": {
+        "adjudicator_pseudonym": {
+          "title": "Adjudicator Pseudonym",
+          "type": "string"
+        },
+        "outcome": {
+          "enum": [
+            "resolved",
+            "withdrawn"
+          ],
+          "title": "Outcome",
+          "type": "string"
+        },
+        "annotation": {
+          "$ref": "#/$defs/Annotation"
+        },
+        "rationale": {
+          "minLength": 20,
+          "title": "Rationale",
+          "type": "string"
+        },
+        "timestamp": {
+          "format": "date-time",
+          "title": "Timestamp",
+          "type": "string"
+        },
+        "case_fingerprint": {
+          "title": "Case Fingerprint",
+          "type": "string"
+        },
+        "human_attestation": {
+          "const": true,
+          "title": "Human Attestation",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "adjudicator_pseudonym",
+        "outcome",
+        "annotation",
+        "rationale",
+        "timestamp",
+        "case_fingerprint",
+        "human_attestation"
+      ],
+      "title": "Adjudication",
+      "type": "object"
+    },
+    "Annotation": {
+      "additionalProperties": false,
+      "properties": {
+        "proposed_label": {
+          "enum": [
+            "valid",
+            "minor_issue",
+            "major_validity_failure",
+            "insufficient_information"
+          ],
+          "title": "Proposed Label",
+          "type": "string"
+        },
+        "adjudicated_label": {
+          "anyOf": [
+            {
+              "enum": [
+                "valid",
+                "minor_issue",
+                "major_validity_failure",
+                "insufficient_information"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Adjudicated Label"
+        },
+        "issue_codes": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Issue Codes",
+          "type": "array"
+        },
+        "decisive_evidence_spans": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Decisive Evidence Spans",
+          "type": "array"
+        },
+        "constraint_statement": {
+          "title": "Constraint Statement",
+          "type": "string"
+        },
+        "expected_diagnosis": {
+          "title": "Expected Diagnosis",
+          "type": "string"
+        },
+        "acceptable_alternative_diagnoses": {
+          "items": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "title": "Acceptable Alternative Diagnoses",
+          "type": "array"
+        },
+        "missing_information": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Missing Information",
+          "type": "array"
+        },
+        "severity_rationale": {
+          "title": "Severity Rationale",
+          "type": "string"
+        },
+        "issue_severity": {
+          "enum": [
+            "none",
+            "minor",
+            "major",
+            "undetermined"
+          ],
+          "title": "Issue Severity",
+          "type": "string"
+        },
+        "evidence_sufficiency": {
+          "enum": [
+            "sufficient",
+            "insufficient"
+          ],
+          "title": "Evidence Sufficiency",
+          "type": "string"
+        },
+        "source_support": {
+          "items": {
+            "$ref": "#/$defs/SourceSupport"
+          },
+          "minItems": 1,
+          "title": "Source Support",
+          "type": "array"
+        },
+        "annotation_status": {
+          "default": "draft",
+          "enum": [
+            "draft",
+            "machine_checked",
+            "awaiting_review",
+            "independently_reviewed",
+            "adjudicated",
+            "frozen",
+            "withdrawn"
+          ],
+          "title": "Annotation Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "proposed_label",
+        "issue_codes",
+        "decisive_evidence_spans",
+        "constraint_statement",
+        "expected_diagnosis",
+        "missing_information",
+        "severity_rationale",
+        "issue_severity",
+        "evidence_sufficiency",
+        "source_support"
+      ],
+      "title": "Annotation",
+      "type": "object"
+    },
+    "CheckResult": {
+      "additionalProperties": false,
+      "properties": {
+        "check_name": {
+          "title": "Check Name",
+          "type": "string"
+        },
+        "check_version": {
+          "default": "1.0",
+          "title": "Check Version",
+          "type": "string"
+        },
+        "inputs": {
+          "additionalProperties": true,
+          "title": "Inputs",
+          "type": "object"
+        },
+        "result": {
+          "enum": [
+            "satisfied",
+            "violated",
+            "unknown",
+            "not_applicable"
+          ],
+          "title": "Result",
+          "type": "string"
+        },
+        "applicability": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Applicability"
+        },
+        "evidence": {
+          "title": "Evidence",
+          "type": "string"
+        },
+        "assumptions": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Assumptions",
+          "type": "array"
+        },
+        "uncertainty": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Uncertainty"
+        }
+      },
+      "required": [
+        "check_name",
+        "inputs",
+        "result",
+        "applicability",
+        "evidence",
+        "assumptions"
+      ],
+      "title": "CheckResult",
+      "type": "object"
+    },
+    "CheckSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "enum": [
+            "dimension",
+            "dilution",
+            "balance",
+            "spectral_overlap",
+            "calibration_range",
+            "threshold",
+            "required_evidence"
+          ],
+          "title": "Name",
+          "type": "string"
+        },
+        "applicable": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Applicable"
+        },
+        "inputs": {
+          "additionalProperties": true,
+          "title": "Inputs",
+          "type": "object"
+        },
+        "source_quotes": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Source Quotes",
+          "type": "array"
+        },
+        "assumptions": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Assumptions",
+          "type": "array"
+        }
+      },
+      "required": [
+        "name",
+        "applicable",
+        "inputs",
+        "source_quotes",
+        "assumptions"
+      ],
+      "title": "CheckSpec",
+      "type": "object"
+    },
+    "ControlledEdit": {
+      "additionalProperties": false,
+      "properties": {
+        "before": {
+          "title": "Before",
+          "type": "string"
+        },
+        "after": {
+          "title": "After",
+          "type": "string"
+        },
+        "affected_constraint": {
+          "title": "Affected Constraint",
+          "type": "string"
+        },
+        "expected_label_change": {
+          "title": "Expected Label Change",
+          "type": "string"
+        },
+        "unintended_meaning_change": {
+          "title": "Unintended Meaning Change",
+          "type": "string"
+        },
+        "edit_kind": {
+          "default": "scientific",
+          "enum": [
+            "scientific",
+            "presentation"
+          ],
+          "title": "Edit Kind",
+          "type": "string"
+        },
+        "meaning_preservation_reviewed": {
+          "default": false,
+          "title": "Meaning Preservation Reviewed",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "before",
+        "after",
+        "affected_constraint",
+        "expected_label_change",
+        "unintended_meaning_change"
+      ],
+      "title": "ControlledEdit",
+      "type": "object"
+    },
+    "Provenance": {
+      "additionalProperties": false,
+      "properties": {
+        "authoring_method": {
+          "title": "Authoring Method",
+          "type": "string"
+        },
+        "source_identifiers": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Source Identifiers",
+          "type": "array"
+        },
+        "source_license": {
+          "title": "Source License",
+          "type": "string"
+        },
+        "permitted_redistribution": {
+          "enum": [
+            "original_authored",
+            "licensed",
+            "not_permitted",
+            "unknown"
+          ],
+          "title": "Permitted Redistribution",
+          "type": "string"
+        },
+        "synthetic_status": {
+          "enum": [
+            "authored_hypothetical",
+            "adapted_real_protocol"
+          ],
+          "title": "Synthetic Status",
+          "type": "string"
+        },
+        "creation_date": {
+          "format": "date",
+          "title": "Creation Date",
+          "type": "string"
+        },
+        "scientific_validation_status": {
+          "default": "unreviewed",
+          "enum": [
+            "unreviewed",
+            "human_adjudicated"
+          ],
+          "title": "Scientific Validation Status",
+          "type": "string"
+        },
+        "contamination_risk": {
+          "default": "unknown",
+          "enum": [
+            "unknown",
+            "low",
+            "medium",
+            "high"
+          ],
+          "title": "Contamination Risk",
+          "type": "string"
+        }
+      },
+      "required": [
+        "authoring_method",
+        "source_identifiers",
+        "source_license",
+        "permitted_redistribution",
+        "synthetic_status",
+        "creation_date"
+      ],
+      "title": "Provenance",
+      "type": "object"
+    },
+    "PublicInput": {
+      "additionalProperties": false,
+      "properties": {
+        "protocol_text": {
+          "maxLength": 30000,
+          "minLength": 40,
+          "title": "Protocol Text",
+          "type": "string"
+        },
+        "stated_objective": {
+          "maxLength": 2000,
+          "minLength": 10,
+          "title": "Stated Objective",
+          "type": "string"
+        },
+        "supplied_measurements": {
+          "additionalProperties": true,
+          "title": "Supplied Measurements",
+          "type": "object"
+        },
+        "instrument_or_assay_context": {
+          "maxLength": 5000,
+          "title": "Instrument Or Assay Context",
+          "type": "string"
+        },
+        "explicit_assumptions": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 30,
+          "title": "Explicit Assumptions",
+          "type": "array"
+        },
+        "evidence_packet_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Evidence Packet Id"
+        },
+        "structured_checks": {
+          "items": {
+            "$ref": "#/$defs/CheckSpec"
+          },
+          "maxItems": 30,
+          "title": "Structured Checks",
+          "type": "array"
+        }
+      },
+      "required": [
+        "protocol_text",
+        "stated_objective",
+        "supplied_measurements",
+        "instrument_or_assay_context",
+        "explicit_assumptions"
+      ],
+      "title": "PublicInput",
+      "type": "object"
+    },
+    "Review": {
+      "additionalProperties": false,
+      "properties": {
+        "reviewer_pseudonym": {
+          "title": "Reviewer Pseudonym",
+          "type": "string"
+        },
+        "independent_label": {
+          "enum": [
+            "valid",
+            "minor_issue",
+            "major_validity_failure",
+            "insufficient_information"
+          ],
+          "title": "Independent Label",
+          "type": "string"
+        },
+        "issue_codes": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Issue Codes",
+          "type": "array"
+        },
+        "evidence_quotes": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Quotes",
+          "type": "array"
+        },
+        "rationale": {
+          "maxLength": 5000,
+          "minLength": 20,
+          "title": "Rationale",
+          "type": "string"
+        },
+        "confidence": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "timestamp": {
+          "format": "date-time",
+          "title": "Timestamp",
+          "type": "string"
+        },
+        "case_fingerprint": {
+          "title": "Case Fingerprint",
+          "type": "string"
+        },
+        "human_attestation": {
+          "const": true,
+          "title": "Human Attestation",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "reviewer_pseudonym",
+        "independent_label",
+        "issue_codes",
+        "evidence_quotes",
+        "rationale",
+        "confidence",
+        "timestamp",
+        "case_fingerprint",
+        "human_attestation"
+      ],
+      "title": "Review",
+      "type": "object"
+    },
+    "SourceSupport": {
+      "additionalProperties": false,
+      "properties": {
+        "source_id": {
+          "title": "Source Id",
+          "type": "string"
+        },
+        "locator": {
+          "title": "Locator",
+          "type": "string"
+        },
+        "supports": {
+          "title": "Supports",
+          "type": "string"
+        },
+        "limitation": {
+          "title": "Limitation",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_id",
+        "locator",
+        "supports",
+        "limitation"
+      ],
+      "title": "SourceSupport",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "case_id": {
+      "pattern": "^cf_[a-f0-9]{12}$",
+      "title": "Case Id",
+      "type": "string"
+    },
+    "family_id": {
+      "title": "Family Id",
+      "type": "string"
+    },
+    "variant_id": {
+      "title": "Variant Id",
+      "type": "string"
+    },
+    "benchmark_version": {
+      "default": "0.1.0-draft",
+      "title": "Benchmark Version",
+      "type": "string"
+    },
+    "schema_version": {
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "domain": {
+      "enum": [
+        "quantitative_chemistry",
+        "fluorescence",
+        "medicinal_assay",
+        "analytical_measurement",
+        "synthesis_characterization",
+        "evidence_interpretation"
+      ],
+      "title": "Domain",
+      "type": "string"
+    },
+    "subdomain": {
+      "title": "Subdomain",
+      "type": "string"
+    },
+    "public_input": {
+      "$ref": "#/$defs/PublicInput"
+    },
+    "annotation": {
+      "$ref": "#/$defs/Annotation"
+    },
+    "provenance": {
+      "$ref": "#/$defs/Provenance"
+    },
+    "parent_case_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Parent Case Id"
+    },
+    "controlled_edit": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ControlledEdit"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "template_id": {
+      "title": "Template Id",
+      "type": "string"
+    },
+    "source_group_id": {
+      "title": "Source Group Id",
+      "type": "string"
+    },
+    "derived_evidence_group_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Derived Evidence Group Id"
+    },
+    "split": {
+      "enum": [
+        "development",
+        "test"
+      ],
+      "title": "Split",
+      "type": "string"
+    },
+    "visibility": {
+      "enum": [
+        "public",
+        "private"
+      ],
+      "title": "Visibility",
+      "type": "string"
+    },
+    "reviews": {
+      "items": {
+        "$ref": "#/$defs/Review"
+      },
+      "title": "Reviews",
+      "type": "array"
+    },
+    "adjudication": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Adjudication"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "machine_checks": {
+      "items": {
+        "$ref": "#/$defs/CheckResult"
+      },
+      "title": "Machine Checks",
+      "type": "array"
+    }
+  },
+  "required": [
+    "case_id",
+    "family_id",
+    "variant_id",
+    "domain",
+    "subdomain",
+    "public_input",
+    "annotation",
+    "provenance",
+    "template_id",
+    "source_group_id",
+    "split",
+    "visibility"
+  ],
+  "title": "Case",
+  "type": "object"
+}

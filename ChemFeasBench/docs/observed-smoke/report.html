@@ -1,0 +1,48 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ChemFeasBench research report</title><style>body{font:16px/1.6 system-ui;max-width:1080px;margin:40px auto;padding:0 24px;color:#153149;background:#f8fafb}h1{font-size:34px}h2{margin-top:36px}table{border-collapse:collapse;width:100%;background:white}td,th{padding:10px;border:1px solid #cbd5df;text-align:left}th{background:#e8f0f3}.notice{padding:18px;background:#fff0cc;border-left:5px solid #a36b0a}img{max-width:100%}code{overflow-wrap:anywhere}</style></head><body><header><p>CHEMICAL EXPERIMENTAL VALIDITY</p><h1>ChemFeasBench · Research report</h1></header>
+<p class="notice"><strong>DRAFT DATA — UNREVIEWED PROPOSED LABELS</strong><br>Observed software smoke results are not a validated chemistry ranking.</p>
+<p>Model: <strong>qwen2.5:0.5b</strong> · Condition: model_only<br>8 tasks in 2 connected family clusters.</p>
+<h2>Classification</h2><table><caption>Primary outcomes and output reliability</caption><tr><th>Metric</th><th>Estimate</th><th>Denominator</th><th>95% cluster interval</th></tr><tr><th scope="row">macro f1</th><td>0.000</td><td>4 labels; 8 tasks</td><td>[0.0, 0.0]</td></tr><tr><th scope="row">major failure recall</th><td>0.000</td><td>0 / 2</td><td>[0.0, 0.0]</td></tr><tr><th scope="row">false acceptance rate</th><td>0.000</td><td>0 / 2</td><td>[0.0, 0.0]</td></tr><tr><th scope="row">missed major failure rate</th><td>1.000</td><td>2 / 2</td><td>[1.0, 1.0]</td></tr><tr><th scope="row">format failure rate</th><td>1.000</td><td>8 / 8</td><td>Not estimable</td></tr></table>
+<p>Macro-F1 averages all four labels. Invalid, missing and abstained outputs receive no classification credit. A null interval denotes insufficient clusters or an undefined resampled denominator.</p>
+<img src="confusion.svg" alt="Confusion heatmap; all values appear in the following table"><table><caption>Confusion counts; output failures remain in the reference denominators</caption><tr><th scope="col">Reference</th><th scope="col">valid</th><th scope="col">minor_issue</th><th scope="col">major_validity_failure</th><th scope="col">insufficient_information</th><th scope="col">format_failure</th><th scope="col">provider_error</th><th scope="col">abstention</th><th scope="col">missing</th></tr><tr><th scope="row">valid</th><td>0</td><td>0</td><td>0</td><td>0</td><td>2</td><td>0</td><td>0</td><td>0</td></tr><tr><th scope="row">minor_issue</th><td>0</td><td>0</td><td>0</td><td>0</td><td>2</td><td>0</td><td>0</td><td>0</td></tr><tr><th scope="row">major_validity_failure</th><td>0</td><td>0</td><td>0</td><td>0</td><td>2</td><td>0</td><td>0</td><td>0</td></tr><tr><th scope="row">insufficient_information</th><td>0</td><td>0</td><td>0</td><td>0</td><td>2</td><td>0</td><td>0</td><td>0</td></tr></table>
+<h2>Confidence and diagnosis</h2><img src="calibration.svg" alt="Calibration of parsed outputs, with counts on each occupied bin">
+<p>Brier score (parsed outputs): {&#x27;value&#x27;: None, &#x27;denominator&#x27;: 0}. Failure-penalized Brier: {&#x27;value&#x27;: 2.0, &#x27;denominator&#x27;: 8, &#x27;failure_penalty&#x27;: 2}.</p>
+<pre>{
+  &quot;oracle_structural_success&quot;: {
+    &quot;value&quot;: 0.0,
+    &quot;numerator&quot;: 0,
+    &quot;denominator&quot;: 2
+  },
+  &quot;end_to_end_structural_success&quot;: {
+    &quot;value&quot;: 0.0,
+    &quot;numerator&quot;: 0,
+    &quot;denominator&quot;: 2
+  },
+  &quot;oracle_coverage&quot;: {
+    &quot;value&quot;: 1.0,
+    &quot;numerator&quot;: 2,
+    &quot;denominator&quot;: 2
+  },
+  &quot;oracle_human_explanation_accuracy&quot;: {
+    &quot;value&quot;: null,
+    &quot;numerator&quot;: 0,
+    &quot;denominator&quot;: 0
+  },
+  &quot;end_to_end_human_explanation_accuracy_subset&quot;: {
+    &quot;value&quot;: null,
+    &quot;numerator&quot;: 0,
+    &quot;denominator&quot;: 0
+  },
+  &quot;note&quot;: &quot;Code/span success is a structural proxy, not verified explanation correctness. Human fields stay empty until actual blind assessment.&quot;
+}</pre>
+<p>Human explanation accuracy is reported only for actual independently assessed explanations with consensus. A zero denominator means no such assessment is available. Correct issue codes and quote overlap alone are structural proxies.</p>
+<h2>Resources</h2><pre>{
+  &quot;input_tokens&quot;: 10568,
+  &quot;output_tokens&quot;: 5074,
+  &quot;known_cost_usd&quot;: null,
+  &quot;elapsed_seconds&quot;: 265.35287774800236,
+  &quot;requests&quot;: 10,
+  &quot;transport_attempts&quot;: 10
+}</pre>
+<h2>Interpretation limits</h2><ul><li>Unreviewed proposed labels cannot establish scientific model performance.</li><li>Small clustered pilot; no definitive ranking.</li><li>Bootstrap sampling uncertainty excludes contamination, label uncertainty and model nondeterminism.</li><li>Null cost means unknown, not zero. Token totals include only provider-reported usage.</li></ul>
+<p>Sampling intervals do not represent all uncertainty in annotation, contamination, model sampling or generalization. Small pilot results should guide curation, not competitive claims.</p>
+<h2>Traceability</h2><p>Run fingerprint: <code>cd2953eab76d469e1385dbd536496601f4141b2f6aad87b90e00f8b3e338a948</code></p><p>Raw requests, responses, failure records and checksums are retained in the private run bundle.</p></body></html>

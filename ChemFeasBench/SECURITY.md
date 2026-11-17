@@ -1,0 +1,9 @@
+# Data handling and local security
+
+The annotation server binds to loopback. It is intended for controlled local research sessions, not exposure to the internet or an untrusted shared host. Separate opaque bearer tokens enforce reviewer/adjudicator API roles. Tokens are hashed in SQLite, kept in memory in the browser form, and never written to public logs by the application. The operator issues one token to each verified person. Pseudonyms are private study identifiers, not anonymization guarantees.
+
+Private test candidates, reference answers, raw model artifacts, review databases and the real-identity register belong outside the public repository. The repository's public-data check and `.gitignore` are safeguards, not a substitute for reviewing a release. A person with filesystem or SQLite access can bypass interface-level protection. Use institutionally appropriate permissions and encryption where required. Do not upload private artifacts as CI attachments.
+
+Provider requests are explicit allowlist projections. The local adapter does not expose arbitrary tools, filesystem access, shell execution, credentials or remote provider endpoints. If future adapters send private cases to an external provider, establish the relevant institutional and provider permissions before enabling that condition.
+
+Public run export requires an explicit publication policy and includes aggregate metrics only. Raw responses may contain protected content or identifiers and are excluded. Source-specific permissions and any third-party restrictions take precedence over the license on original project material. Report suspected reference leakage or credentials privately to the project maintainer through the repository's established private security channel when available; no private email address is assumed here.

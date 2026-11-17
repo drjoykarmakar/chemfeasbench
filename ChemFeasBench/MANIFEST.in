@@ -1,0 +1,8 @@
+include README.md LICENSE DATA_LICENSE.md CITATION.cff CHANGELOG.md CONTRIBUTING.md SECURITY.md
+include requirements.lock requirements-dev.lock
+recursive-include configs *.json
+recursive-include data *.json *.jsonl
+recursive-include docs *.md *.json *.html *.svg *.png
+recursive-include scripts *.py
+recursive-include tests *.py
+recursive-include .github/workflows *.yml

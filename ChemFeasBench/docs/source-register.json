@@ -1,0 +1,106 @@
+[
+  {
+    "source_id": "PHYSDOX",
+    "title": "PhysDox: Benchmarking LLMs on Physical Feasibility Auditing of Physiological Sensing Protocols",
+    "authors": "He Liu; Boyuan Gu; Shuaiqi Cheng; Haiyang Sun; Siyu You; Xuming Hu",
+    "year": 2026,
+    "identifier": "arXiv:2606.05003v2",
+    "url": "https://arxiv.org/abs/2606.05003v2",
+    "reviewed_material": "User-supplied 22-page version, dated 23 September 2026; sections 2–3 and appendices",
+    "supports": "Severity detection, constraint diagnosis, oracle versus end-to-end evaluation",
+    "license_status": "Not established for redistribution in this project",
+    "permitted_use": "Citation and methodological attribution only; PDF, cases, figures and results not redistributed",
+    "checked_date": "2026-11-16"
+  },
+  {
+    "source_id": "NIST7457",
+    "title": "Recommendations and Guidelines for Standardization of Fluorescence Spectroscopy",
+    "authors": "Paul C. DeRose",
+    "year": 2008,
+    "identifier": "NISTIR 7457; 10.6028/NIST.IR.7457",
+    "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir7457.pdf",
+    "supports": "Measurement context, optical artifacts and sample-based factors",
+    "license_status": "US government publication; third-party material rights not exhaustively audited",
+    "permitted_use": "Bibliographic citation; no source pages or figures bundled",
+    "checked_date": "2026-11-16"
+  },
+  {
+    "source_id": "NIST7458",
+    "title": "Standard Guide to Fluorescence – Instrument Calibration and Validation",
+    "authors": "Paul C. DeRose",
+    "year": 2007,
+    "identifier": "NISTIR 7458",
+    "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/IR/nistir7458.pdf",
+    "supports": "Instrument correction, wavelength response and relative quantum-yield measurement",
+    "license_status": "US government publication; third-party material rights not exhaustively audited",
+    "permitted_use": "Bibliographic citation; no full text bundled",
+    "checked_date": "2026-11-16",
+    "edition_note": "PDF title page dated October 2007; NIST catalog also lists a January 2008 publication entry."
+  },
+  {
+    "source_id": "AGM_FL",
+    "title": "Interference with Fluorescence and Absorbance",
+    "identifier": "NCBI Bookshelf NBK343429",
+    "url": "https://www.ncbi.nlm.nih.gov/books/NBK343429/",
+    "year": 2015,
+    "supports": "Optical interference, counterscreens and orthogonal assays",
+    "license_status": "AGM default CC BY-NC-SA 3.0, except where otherwise noted; individual figures not audited",
+    "permitted_use": "Citation and facts; no source expression, figures or full text bundled",
+    "checked_date": "2026-11-16"
+  },
+  {
+    "source_id": "AGM_IC50",
+    "title": "Basics of Enzymatic Assays for HTS",
+    "authors": "Harold B. Brooks and colleagues",
+    "identifier": "NCBI Bookshelf NBK92007",
+    "url": "https://www.ncbi.nlm.nih.gov/books/NBK92007/",
+    "year": 2012,
+    "supports": "Enzyme kinetics, condition-dependent potency and concentration-response interpretation",
+    "license_status": "CC BY-NC-SA 3.0 except where otherwise noted; verified copyright notice",
+    "permitted_use": "Citation and mathematical facts; no source text or figures bundled",
+    "checked_date": "2026-11-16"
+  },
+  {
+    "source_id": "AGM_VIABILITY",
+    "title": "Cell Viability Assays",
+    "identifier": "NCBI Bookshelf NBK144065",
+    "url": "https://www.ncbi.nlm.nih.gov/books/NBK144065/",
+    "year": 2013,
+    "supports": "Viability-related readouts and interpretation limits",
+    "license_status": "AGM default CC BY-NC-SA 3.0, except where otherwise noted",
+    "permitted_use": "Citation and facts; no source text or figures bundled",
+    "checked_date": "2026-11-16"
+  },
+  {
+    "source_id": "AGM_HCS",
+    "title": "Interference and Artifacts in High-content Screening",
+    "identifier": "NCBI Bookshelf NBK615088",
+    "url": "https://www.ncbi.nlm.nih.gov/books/NBK615088/",
+    "supports": "Distinguishing readout interference, cell injury and biological modulation",
+    "license_status": "AGM default CC BY-NC-SA 3.0, except where otherwise noted",
+    "permitted_use": "Citation and facts; no source text or figures bundled; not a validation of the stipulated target-engagement assay",
+    "checked_date": "2026-11-16"
+  },
+  {
+    "source_id": "AGM_AGG",
+    "title": "Assay Interference by Aggregation",
+    "authors": "Douglas S. Auld; James Inglese; Jayme L. Dahlin",
+    "identifier": "NCBI Bookshelf NBK442297",
+    "url": "https://www.ncbi.nlm.nih.gov/books/NBK442297/",
+    "year": 2017,
+    "supports": "Context-dependent aggregation interference and convergent counterscreens",
+    "license_status": "AGM default CC BY-NC-SA 3.0, except where otherwise noted",
+    "permitted_use": "Citation and facts; no source text or figures bundled",
+    "checked_date": "2026-11-16"
+  },
+  {
+    "source_id": "MATH_DILUTION",
+    "title": "Conservation-of-solute derivation under additive volumes",
+    "identifier": "C1 V1 = C2 V2",
+    "url": null,
+    "supports": "Dimensional arithmetic under explicit assumptions",
+    "license_status": "Mathematical relationship; original explanatory wording",
+    "permitted_use": "Original authored examples under CC-BY-4.0",
+    "checked_date": "2026-11-16"
+  }
+]

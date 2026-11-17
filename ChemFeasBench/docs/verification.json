@@ -1,0 +1,55 @@
+{
+  "software_version": "0.1.0",
+  "verification_date": "2026-11-16",
+  "automated_tests": {
+    "passed": 63,
+    "failed": 0
+  },
+  "lint": "passed",
+  "formatting": "passed",
+  "typing": "passed",
+  "build": "wheel_and_sdist_passed",
+  "built_wheel_resources": "verified",
+  "all60_drafts": {
+    "cases": 60,
+    "families": 15,
+    "independent_clusters": 15,
+    "fingerprint": "a92538eff92a39e68fcb1c3d0596743d51680e165dc843879cddeb7cf35d1118",
+    "adjudicated": 0
+  },
+  "public_development": {
+    "cases": 24,
+    "families": 6,
+    "independent_clusters": 6,
+    "fingerprint": "6bb3ae6d19bb9a6073c53d67a0ecd9a9d4314b7b1770ee083399425db0a1655d",
+    "adjudicated": 0
+  },
+  "reviewers": 0,
+  "adjudicated_cases": 0,
+  "gold_freeze_unreviewed": "rejected",
+  "live_smoke": {
+    "model": "qwen2.5:0.5b",
+    "classification_requests": 8,
+    "oracle_diagnosis_requests": 2,
+    "classification_format_failures": 8,
+    "gold": false,
+    "domains": [
+      "fluorescence"
+    ]
+  },
+  "release_software": {
+    "python": "3.12.14",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "dependencies": {
+      "chemfeasbench": "0.1.0",
+      "pydantic": "2.14.3",
+      "pint": "0.26.2",
+      "numpy": "2.5.5",
+      "httpx": "0.28.1",
+      "fastapi": "0.163.1",
+      "matplotlib": "3.11.2"
+    },
+    "source_fingerprint": "265d65b91c0297e3c2592cb054020d555c744991c76ea969f83d0bf4d86a92b0"
+  },
+  "inference_source_note": "Exact inference source preserved privately; release adds completed-resume and report-lock safeguards."
+}

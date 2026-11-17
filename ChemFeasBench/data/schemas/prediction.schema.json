@@ -1,0 +1,100 @@
+{
+  "$defs": {
+    "Issue": {
+      "additionalProperties": false,
+      "properties": {
+        "issue_code": {
+          "maxLength": 100,
+          "minLength": 1,
+          "title": "Issue Code",
+          "type": "string"
+        },
+        "evidence_quote": {
+          "maxLength": 3000,
+          "minLength": 1,
+          "title": "Evidence Quote",
+          "type": "string"
+        },
+        "constraint": {
+          "maxLength": 1000,
+          "minLength": 1,
+          "title": "Constraint",
+          "type": "string"
+        },
+        "explanation": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "title": "Explanation",
+          "type": "string"
+        }
+      },
+      "required": [
+        "issue_code",
+        "evidence_quote",
+        "constraint",
+        "explanation"
+      ],
+      "title": "Issue",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "label": {
+      "enum": [
+        "valid",
+        "minor_issue",
+        "major_validity_failure",
+        "insufficient_information"
+      ],
+      "title": "Label",
+      "type": "string"
+    },
+    "label_probabilities": {
+      "additionalProperties": {
+        "type": "number"
+      },
+      "propertyNames": {
+        "enum": [
+          "valid",
+          "minor_issue",
+          "major_validity_failure",
+          "insufficient_information"
+        ]
+      },
+      "title": "Label Probabilities",
+      "type": "object"
+    },
+    "issues": {
+      "items": {
+        "$ref": "#/$defs/Issue"
+      },
+      "maxItems": 12,
+      "title": "Issues",
+      "type": "array"
+    },
+    "missing_information": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 20,
+      "title": "Missing Information",
+      "type": "array"
+    },
+    "summary": {
+      "maxLength": 2000,
+      "minLength": 1,
+      "title": "Summary",
+      "type": "string"
+    }
+  },
+  "required": [
+    "label",
+    "label_probabilities",
+    "issues",
+    "missing_information",
+    "summary"
+  ],
+  "title": "Prediction",
+  "type": "object"
+}

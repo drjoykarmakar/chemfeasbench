@@ -1,0 +1,377 @@
+{
+  "status": "draft_unreviewed",
+  "cases": 60,
+  "families": 15,
+  "development_cases": 24,
+  "test_cases": 36,
+  "constructed_label_counts": {
+    "valid": 15,
+    "minor_issue": 15,
+    "major_validity_failure": 15,
+    "insufficient_information": 15
+  },
+  "distribution_note": "Intentionally balanced proposals, not natural prevalence.",
+  "assignments": [
+    {
+      "case_id": "cf_d89233373295",
+      "family_id": "family_da68b709d9c0",
+      "split": "development",
+      "visibility": "public"
+    },
+    {
+      "case_id": "cf_e41650d2f08a",
+      "family_id": "family_49c16b03b7cd",
+      "split": "test",
+      "visibility": "private"
+    },
+    {
+      "case_id": "cf_f5a05c922cf8",
+      "family_id": "family_8a06f6da11a8",
+      "split": "test",
+      "visibility": "private"
+    },
+    {
+      "case_id": "cf_e95f581dce0e",
+      "family_id": "family_9a1c1b9474a5",
+      "split": "development",
+      "visibility": "public"
+    },
+    {
+      "case_id": "cf_8e6d7ae882ed",
+      "family_id": "family_ce01fdedb751",
+      "split": "development",
+      "visibility": "public"
+    },
+    {
+      "case_id": "cf_1add233038ab",
+      "family_id": "family_d2b5bda27725",
+      "split": "development",
+      "visibility": "public"
+    },
+    {
+      "case_id": "cf_026e003a9106",
+      "family_id": "family_8a7ca3a41e71",
+      "split": "development",
+      "visibility": "public"
+    },
+    {
+      "case_id": "cf_d4aba28e0b3e",
+      "family_id": "family_8a06f6da11a8",
+      "split": "test",
+      "visibility": "private"
+    },
+    {
+      "case_id": "cf_3693a3bc6024",
+      "family_id": "family_8a06f6da11a8",
+      "split": "test",
+      "visibility": "private"
+    },
+    {
+      "case_id": "cf_886c44f493d7",
+      "family_id": "family_ba7ba5cbf5fc",
+      "split": "development",
+      "visibility": "public"
+    },
+    {
+      "case_id": "cf_c6dc08dbe91d",
+      "family_id": "family_4f4b89998e69",
+      "split": "test",
+      "visibility": "private"
+    },
+    {
+      "case_id": "cf_2de7a889d487",
+      "family_id": "family_ce01fdedb751",
+      "split": "development",
+      "visibility": "public"
+    },
+    {
+      "case_id": "cf_f31c771a0f8e",
+      "family_id": "family_245cb66cabc9",
+      "split": "test",
+      "visibility": "private"
+    },
+    {
+      "case_id": "cf_c7a14ec4d4ad",
+      "family_id": "family_ba7ba5cbf5fc",
+      "split": "development",
+      "visibility": "public"
+    },
+    {
+      "case_id": "cf_f7016d611a74",
+      "family_id": "family_8a06f6da11a8",
+      "split": "test",
+      "visibility": "private"
+    },
+    {
+      "case_id": "cf_859e4270a28e",
+      "family_id": "family_ba7ba5cbf5fc",
+      "split": "development",
+      "visibility": "public"
+    },
+    {
+      "case_id": "cf_689f8b867221",
+      "family_id": "family_4f4b89998e69",
+      "split": "test",
+      "visibility": "private"
+    },
+    {
+      "case_id": "cf_013f7f294f47",
+      "family_id": "family_7e825c2216d6",
+      "split": "test",
+      "visibility": "private"
+    },
+    {
+      "case_id": "cf_4a6ac2d77631",
+      "family_id": "family_8a7ca3a41e71",
+      "split": "development",
+      "visibility": "public"
+    },
+    {
+      "case_id": "cf_e0fe915ae454",
+      "family_id": "family_6998eb4b9adb",
+      "split": "test",
+      "visibility": "private"
+    },
+    {
+      "case_id": "cf_fb4a1a87f9e3",
+      "family_id": "family_4f4b89998e69",
+      "split": "test",
+      "visibility": "private"
+    },
+    {
+      "case_id": "cf_7309678995e9",
+      "family_id": "family_49c16b03b7cd",
+      "split": "test",
+      "visibility": "private"
+    },
+    {
+      "case_id": "cf_47fda8d656c7",
+      "family_id": "family_49c16b03b7cd",
+      "split": "test",
+      "visibility": "private"
+    },
+    {
+      "case_id": "cf_67dad38d3838",
+      "family_id": "family_49c16b03b7cd",
+      "split": "test",
+      "visibility": "private"
+    },
+    {
+      "case_id": "cf_c106c39d2b04",
+      "family_id": "family_da68b709d9c0",
+      "split": "development",
+      "visibility": "public"
+    },
+    {
+      "case_id": "cf_217e42a53d7a",
+      "family_id": "family_9a1c1b9474a5",
+      "split": "development",
+      "visibility": "public"
+    },
+    {
+      "case_id": "cf_cd61d12b8a7e",
+      "family_id": "family_9a78a19a16b0",
+      "split": "test",
+      "visibility": "private"
+    },
+    {
+      "case_id": "cf_e817b6781bd5",
+      "family_id": "family_4f4b89998e69",
+      "split": "test",
+      "visibility": "private"
+    },
+    {
+      "case_id": "cf_2492604da07f",
+      "family_id": "family_6998eb4b9adb",
+      "split": "test",
+      "visibility": "private"
+    },
+    {
+      "case_id": "cf_0cd73a927c89",
+      "family_id": "family_245cb66cabc9",
+      "split": "test",
+      "visibility": "private"
+    },
+    {
+      "case_id": "cf_e1631fe39e94",
+      "family_id": "family_8a7ca3a41e71",
+      "split": "development",
+      "visibility": "public"
+    },
+    {
+      "case_id": "cf_1802953326ea",
+      "family_id": "family_05268f509473",
+      "split": "test",
+      "visibility": "private"
+    },
+    {
+      "case_id": "cf_cb109adabea2",
+      "family_id": "family_9a1c1b9474a5",
+      "split": "development",
+      "visibility": "public"
+    },
+    {
+      "case_id": "cf_dabb1c5345ca",
+      "family_id": "family_8a7ca3a41e71",
+      "split": "development",
+      "visibility": "public"
+    },
+    {
+      "case_id": "cf_31306233799d",
+      "family_id": "family_110b2fff0af4",
+      "split": "test",
+      "visibility": "private"
+    },
+    {
+      "case_id": "cf_88d89c25003d",
+      "family_id": "family_ce01fdedb751",
+      "split": "development",
+      "visibility": "public"
+    },
+    {
+      "case_id": "cf_1bf1ffef47b2",
+      "family_id": "family_6998eb4b9adb",
+      "split": "test",
+      "visibility": "private"
+    },
+    {
+      "case_id": "cf_304c0f5a3220",
+      "family_id": "family_d2b5bda27725",
+      "split": "development",
+      "visibility": "public"
+    },
+    {
+      "case_id": "cf_87bd32dde01d",
+      "family_id": "family_05268f509473",
+      "split": "test",
+      "visibility": "private"
+    },
+    {
+      "case_id": "cf_e6b40bd196c7",
+      "family_id": "family_7e825c2216d6",
+      "split": "test",
+      "visibility": "private"
+    },
+    {
+      "case_id": "cf_ecc610f0e80b",
+      "family_id": "family_110b2fff0af4",
+      "split": "test",
+      "visibility": "private"
+    },
+    {
+      "case_id": "cf_89dbbe44ed1b",
+      "family_id": "family_9a78a19a16b0",
+      "split": "test",
+      "visibility": "private"
+    },
+    {
+      "case_id": "cf_45692b74cf80",
+      "family_id": "family_245cb66cabc9",
+      "split": "test",
+      "visibility": "private"
+    },
+    {
+      "case_id": "cf_16967c8bec03",
+      "family_id": "family_9a78a19a16b0",
+      "split": "test",
+      "visibility": "private"
+    },
+    {
+      "case_id": "cf_92d9b51b1eed",
+      "family_id": "family_da68b709d9c0",
+      "split": "development",
+      "visibility": "public"
+    },
+    {
+      "case_id": "cf_d8bf3490cd00",
+      "family_id": "family_9a78a19a16b0",
+      "split": "test",
+      "visibility": "private"
+    },
+    {
+      "case_id": "cf_dfa15d84774d",
+      "family_id": "family_6998eb4b9adb",
+      "split": "test",
+      "visibility": "private"
+    },
+    {
+      "case_id": "cf_b17a4a3bf067",
+      "family_id": "family_05268f509473",
+      "split": "test",
+      "visibility": "private"
+    },
+    {
+      "case_id": "cf_4ed9be0a29aa",
+      "family_id": "family_d2b5bda27725",
+      "split": "development",
+      "visibility": "public"
+    },
+    {
+      "case_id": "cf_3236a52758d9",
+      "family_id": "family_9a1c1b9474a5",
+      "split": "development",
+      "visibility": "public"
+    },
+    {
+      "case_id": "cf_7cabd6f6d1c8",
+      "family_id": "family_ba7ba5cbf5fc",
+      "split": "development",
+      "visibility": "public"
+    },
+    {
+      "case_id": "cf_e9622a567701",
+      "family_id": "family_110b2fff0af4",
+      "split": "test",
+      "visibility": "private"
+    },
+    {
+      "case_id": "cf_11d389eb9187",
+      "family_id": "family_7e825c2216d6",
+      "split": "test",
+      "visibility": "private"
+    },
+    {
+      "case_id": "cf_d8836b3411db",
+      "family_id": "family_da68b709d9c0",
+      "split": "development",
+      "visibility": "public"
+    },
+    {
+      "case_id": "cf_0197f9cf8ab6",
+      "family_id": "family_110b2fff0af4",
+      "split": "test",
+      "visibility": "private"
+    },
+    {
+      "case_id": "cf_a39b61659b08",
+      "family_id": "family_d2b5bda27725",
+      "split": "development",
+      "visibility": "public"
+    },
+    {
+      "case_id": "cf_416704844c6c",
+      "family_id": "family_ce01fdedb751",
+      "split": "development",
+      "visibility": "public"
+    },
+    {
+      "case_id": "cf_bee089bf7130",
+      "family_id": "family_7e825c2216d6",
+      "split": "test",
+      "visibility": "private"
+    },
+    {
+      "case_id": "cf_374c9cbc69b6",
+      "family_id": "family_245cb66cabc9",
+      "split": "test",
+      "visibility": "private"
+    },
+    {
+      "case_id": "cf_f172a07fa277",
+      "family_id": "family_05268f509473",
+      "split": "test",
+      "visibility": "private"
+    }
+  ],
+  "all_case_fingerprint": "a92538eff92a39e68fcb1c3d0596743d51680e165dc843879cddeb7cf35d1118"
+}

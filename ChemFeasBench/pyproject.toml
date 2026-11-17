@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools==84.2.1", "wheel==0.48.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chemfeasbench"
+version = "0.1.0"
+description = "Chemical experimental validity benchmark and auditable review pipeline"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+license = "MIT"
+authors = [{name = "Joy Karmakar"}]
+dependencies = ["pydantic==2.14.3", "pint==0.26.2", "numpy==2.5.5", "fastapi==0.163.1", "uvicorn==0.54.0", "httpx==0.28.1", "matplotlib==3.11.2"]
+
+[project.optional-dependencies]
+dev = ["pytest==9.2.0", "ruff==0.17.5", "mypy==2.4.1", "build==1.6.1", "pip-tools==7.7.0"]
+
+[project.scripts]
+chemfeas = "chemfeasbench.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+chemfeasbench = ["annotation/*.html", "prompts/*.txt", "py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.12"
+files = ["src/chemfeasbench"]
+check_untyped_defs = true
+disallow_untyped_defs = true
+warn_unused_ignores = true
+ignore_missing_imports = true
